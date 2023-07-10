@@ -1,0 +1,30 @@
+:host {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+}
+
+img {
+    margin: 0 16px;
+    filter: brightness(0) invert(1);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+
+    li {
+        padding: 0px 5px;
+        
+        a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+        }
+        a.active, a:focus, a:hover { opacity: 1; }
+    }
+}

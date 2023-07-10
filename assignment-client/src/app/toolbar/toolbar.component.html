@@ -1,0 +1,11 @@
+<img width="40" alt="Consist Cinema Logo" src="assets/film-icon.svg" />
+
+<span>Consist Cinema</span>
+
+<nav>
+    <ul>
+        <li *ngFor="let opt of navOptions">
+            <a [routerLink]="opt.path" routerLinkActive="active">{{opt.title}}</a>
+        </li>
+    </ul>
+</nav>
