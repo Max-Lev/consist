@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ToolbarComponent {
   navOptions = [
-    { path: 'home', title: 'Home' }
+    { path: 'home', title: 'Home' },
+    { path: 'movies', title: 'Movies' }
   ];
 }
