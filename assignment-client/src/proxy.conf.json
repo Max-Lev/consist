@@ -1,0 +1,11 @@
+
+{
+  "/api/movies": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/api/movies/booking/:movieId": {
+    "target": "http://localhost:3000",
+    "secure": false
+  }
+}
