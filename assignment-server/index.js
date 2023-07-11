@@ -90,7 +90,7 @@ app.put('/api/booking', (req, res) => {
     return res.status(400).send(`Bad Request: Tickets count must be greater than 0`);
   }
 
-  let movieBooking = bookings.find(e => e.id == showId);
+  let movieBooking = bookings.find(e => e.id === showId);
   if (!movieBooking) {
     return res.status(400).send(`Bad Request: Movie booking id ${showId} not found`);
   }
@@ -102,7 +102,8 @@ app.put('/api/booking', (req, res) => {
   }
 
   movieBooking.booked += tickets;
-  return res.send('Booked successfully')
+  // return res.send({ response: 'Booked successfully' })
+  return res.send('Booked successfully');
 })
 // Start the server
 app.listen(port, () => {

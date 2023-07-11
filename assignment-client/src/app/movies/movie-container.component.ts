@@ -11,18 +11,23 @@ import { IBooking } from './models/booking.model';
 })
 export class MoviesContainerComponent implements OnInit {
 
-  data: {movies: IMovie, bookings: IBooking[]}[] = [];
+  data: { movies: IMovie, bookings: IBooking[] }[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute,
-    private moviesService: MoviesService) {
+  constructor(private activatedRoute: ActivatedRoute, private moviesService: MoviesService) {
+
     this.data = this.activatedRoute.snapshot.data['moviesResolver'];
+    console.log(this.data)
+    
   }
 
   ngOnInit(): void {
-    // this.moviesService.getData$()
-    //   .subscribe({
-    //     next:(data)=>console.log(data),
-    //     complete:()=>console.log('complete')
-    //   })
+
+  }
+
+  orderHandler(value: { booking: IBooking, tickets: number }) {
+    this.moviesService.booking$(value).subscribe({
+      next: (response) => console.log(response),
+      error: (err) => console.log(err)
+    });
   }
 }

@@ -1,9 +1,23 @@
-<p-card header="{{movie.movies.name}}">
-    <section>
-        
-<div class="card flex justify-content-center">
-    <!-- [(ngModel)]="hallSelected" -->
-    <p-dropdown [options]="hall" optionLabel="name"></p-dropdown>
-</div>
-    </section>
-</p-card>
+<form [formGroup]="bookingForm" (ngSubmit)="submit(bookingForm.value)">
+    <p-card header="{{data.movies.name}}">
+
+        <p-dropdown placeholder="Order Movie" formControlName="booking" [options]="data.bookings"
+            optionLabel="showTime"></p-dropdown>
+
+        <p-inputNumber formControlName="tickets" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal"
+            spinnerMode="horizontal" [step]="1" decrementButtonClass="p-button-danger"
+            incrementButtonClass="p-button-success" incrementButtonIcon="pi pi-plus"
+            decrementButtonIcon="pi pi-minus"></p-inputNumber>
+
+        <p-button type="submit" [disabled]="(bookingForm.valid) ? false : true" label="Order"></p-button>
+
+        <section>
+           BOOKED {{bookingForm.get('booking')?.value?.booked}}
+        </section>
+    
+        <section>
+           CAPACITY {{bookingForm.get('booking')?.value?.capacity}}
+        </section>
+
+    </p-card>
+</form>

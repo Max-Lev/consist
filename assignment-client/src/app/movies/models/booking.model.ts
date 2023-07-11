@@ -1,7 +1,7 @@
 export interface IBooking {
     id: number,
     movieId: number,
-    showTime: Date,
+    showTime: string,
     hallId: number,
     booked: number
 }
