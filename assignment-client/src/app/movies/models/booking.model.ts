@@ -20,7 +20,6 @@ export class DataModel implements IData {
     constructor(data: IData) {
         this.bookings = data.bookings;
         this.movie = data.movie;
-        console.log(this);
     }
 }
 

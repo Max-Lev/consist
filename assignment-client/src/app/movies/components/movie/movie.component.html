@@ -1,8 +1,7 @@
-{{this.data.bookings | json}}
 <form [formGroup]="bookingForm" (ngSubmit)="submit(bookingForm.value)">
-    <p-card header="{{data.movies.name}}">
+    <p-card header="{{dataItem.movie.name}}">
 
-        <p-dropdown placeholder="Order Movie" formControlName="booking" [options]="data.bookings"
+        <p-dropdown placeholder="Order Movie" formControlName="booking" [options]="dataItem.bookings"
             optionLabel="showTime"></p-dropdown>
 
         <p-inputNumber formControlName="tickets" [showButtons]="true" buttonLayout="horizontal" inputId="horizontal"

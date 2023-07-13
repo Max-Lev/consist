@@ -1,3 +1,4 @@
-<ng-container *ngFor="let movie of data;let i = index;">
-    <app-movie [id]="i" (orderEmitter)="orderHandler($event)" [data]="movie"></app-movie>
+<!-- <ng-container *ngFor="let movie of data;let i = index;"> -->
+<ng-container *ngFor="let movie of datalist;let i = index;">
+    <app-movie [id]="i" (orderEmitter)="orderHandler($event)" [dataItem]="movie"></app-movie>
 </ng-container>
