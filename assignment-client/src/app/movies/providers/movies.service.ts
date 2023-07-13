@@ -57,12 +57,13 @@ export class MoviesService {
     const payload = { showId: value.booking.id, tickets: value.tickets };
 
     return this.http.put(`/api/booking`, payload, { responseType: 'text' })
+      .pipe(mergeMap(() => this.getBooking$(value.booking.movieId)))
       .pipe(catchError(err => {
-          return throwError(() => {
-            console.log(err);
-            return new Error(err);
-          })
-        }));
+        return throwError(() => {
+          console.log(err);
+          return new Error(err);
+        })
+      }));
   }
 
 

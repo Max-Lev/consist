@@ -1,3 +1,4 @@
+{{this.data.bookings | json}}
 <form [formGroup]="bookingForm" (ngSubmit)="submit(bookingForm.value)">
     <p-card header="{{data.movies.name}}">
 
@@ -12,11 +13,11 @@
         <p-button type="submit" [disabled]="(bookingForm.valid) ? false : true" label="Order"></p-button>
 
         <section>
-           BOOKED {{bookingForm.get('booking')?.value?.booked}}
+            BOOKED {{bookingForm.get('booking')?.value?.booked}}
         </section>
-    
+
         <section>
-           CAPACITY {{bookingForm.get('booking')?.value?.capacity}}
+            CAPACITY {{bookingForm.get('booking')?.value?.capacity}}
         </section>
 
     </p-card>
